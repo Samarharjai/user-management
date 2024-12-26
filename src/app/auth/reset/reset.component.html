@@ -1,0 +1,33 @@
+<app-auth-form
+  heading="Recover Password"
+  [inputs]="[
+    {
+      label: 'Enter New Password',
+      type: 'password',
+      name: 'password',
+      placeholder: '•••••••',
+      validations: {
+        required: true,
+        minLength: 6,
+        maxLength: 50
+      }
+    },
+    {
+      label: 'Confirm New Password',
+      type: 'password',
+      name: 'password-confirm',
+      placeholder: '•••••••',
+      validations: {
+        required: true,
+        minLength: 6,
+        maxLength: 50
+      }
+    }
+  ]"
+  [navigate]="{
+    url: ['/auth', 'forgot-password'],
+    label: 'Resend reset password link?'
+  }"
+  submitBtnLabel="Reset Password"
+  (complete)="onSubmit($event)"
+/>

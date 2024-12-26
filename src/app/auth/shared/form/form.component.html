@@ -1,0 +1,29 @@
+<img src="/download.png" alt="DCT Logo" />
+<h1>{{ heading() }}</h1>
+<form (submit)="onSubmit($event)">
+  @for (input of inputs(); track input.name) {
+  <div>
+    <label [for]="input.name">{{ input.label }}</label
+    ><br />
+    <input
+      [type]="input.type || 'text'"
+      [name]="input.name"
+      [id]="input.name"
+      [placeholder]="input.placeholder"
+      [class.error]="formErrors[input.name]"
+      (input)="onChange($event)"
+    /><br />
+    @if(formErrors[input.name]) {
+    <div class="error-message">
+      {{ formErrors[input.name] }}
+    </div>
+    }
+  </div>
+  }
+
+  <div class="navigate-container">
+    <a [routerLink]="navigate().url"> {{ navigate().label }}</a>
+  </div>
+
+  <button type="submit">{{ submitBtnLabel() }}</button>
+</form>

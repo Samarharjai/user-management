@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  /* 1rem = 10px */
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: "Roboto Condensed", serif;
+}
+
+a,
+button {
+  all: unset;
+}

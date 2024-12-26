@@ -1,0 +1,21 @@
+<app-auth-form
+  heading="Forgot Password"
+  [inputs]="[
+    {
+      label: 'Email address',
+      type: 'email',
+      name: 'email',
+      placeholder: 'user@example.com',
+      validations: {
+        required: true,
+        email: true
+      }
+    }
+  ]"
+  [navigate]="{
+    url: ['/auth', 'login'],
+    label: 'Back To Login'
+  }"
+  submitBtnLabel="Send Reset Link"
+  (complete)="onSubmit($event)"
+/>

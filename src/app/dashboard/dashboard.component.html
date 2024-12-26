@@ -1,0 +1,20 @@
+<div class="dashboard">
+  <div class="sidebar">
+    <h2>Sidebar</h2>
+    <ul>
+      <li><a routerLink="/dashboard">Dashboard</a></li>
+      <li><a routerLink="/dashboard/users">Users</a></li>
+    </ul>
+  </div>
+  <div class="content"></div>
+</div>
+
+<div>
+  <button (click)="onAddTodo()">Add Todo</button>
+
+  <ul>
+    @for (todo of query.data(); track todo.id) {
+    <li>{{ todo.id }} {{ todo.title }}</li>
+    }
+  </ul>
+</div>

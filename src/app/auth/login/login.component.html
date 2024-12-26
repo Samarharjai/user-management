@@ -1,0 +1,32 @@
+<app-auth-form
+  heading="Log in to your account"
+  [inputs]="[
+    {
+      label: 'Email address',
+      type: 'email',
+      name: 'email',
+      placeholder: 'user@example.com',
+      validations: {
+        required: true,
+        email: true
+      }
+    },
+    {
+      label: 'Password',
+      type: 'password',
+      name: 'password',
+      placeholder: '•••••••',
+      validations: {
+        required: true,
+        minLength: 6,
+        maxLength: 50
+      }
+    }
+  ]"
+  [navigate]="{
+    url: ['/auth', 'forgot-password'],
+    label: 'Forgot password?'
+  }"
+  submitBtnLabel="Log in"
+  (complete)="onSubmit($event)"
+/>
